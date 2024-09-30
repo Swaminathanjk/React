@@ -1,0 +1,12 @@
+.heading {
+  display: flex;
+  text-align: center;
+  margin: 10px;
+  margin-left: 45vw;
+}
+.done {
+  display: flex;
+  text-align: center;
+  margin: 10px;
+  margin-left: 46vw;
+}
