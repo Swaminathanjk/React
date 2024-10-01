@@ -7,7 +7,7 @@ const Post = ({ post }) => {
   return (
     <div className="card mb-3 " style={{ width: "18rem" }}>
       <div className="card-body">
-        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        <span className=" position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ">
           <MdDelete onClick={() => deletefromList(post.id)} />
         </span>
         <h5 className="card-title">{post.title}</h5>

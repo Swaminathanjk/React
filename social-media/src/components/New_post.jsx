@@ -16,6 +16,11 @@ const New_post = () => {
     const tags = tagsElement.current.value;
 
     addtoList(userid, postTitle, postbody, tags);
+
+    useridElement.current.value = "";
+    postTitleElement.current.value = "";
+    postbodyElement.current.value = "";
+    tagsElement.current.value = "";
   };
 
   return (
