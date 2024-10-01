@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { MdDelete } from "react-icons/md";
-import { PostList } from "./Context/post-context";
+import { PostList } from "../Context/post-context";
 
 const Post = ({ post }) => {
   const { deletefromList, likePost } = useContext(PostList);
