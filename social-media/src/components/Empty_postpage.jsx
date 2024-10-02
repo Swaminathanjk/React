@@ -5,9 +5,6 @@ const Empty_postpage = ({ add_api }) => {
     <div>
       <center>
         <h1>Profile Empty</h1>
-        <button onClick={add_api} type="button" class="btn btn-success">
-          Import API
-        </button>
       </center>
     </div>
   );

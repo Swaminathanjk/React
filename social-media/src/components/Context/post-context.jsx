@@ -68,7 +68,7 @@ const postListReducer = (currPostList, action) => {
       return [action.payload, ...currPostList];
 
     case "ADD_API":
-      return [...action.payload.posts, ...currPostList]; // Merge the API data with the current list
+      return [...action.payload.posts]; // Merge the API data with the current list
 
     default:
       return currPostList;
@@ -76,7 +76,7 @@ const postListReducer = (currPostList, action) => {
 };
 
 const PostListProvider = ({ children }) => {
-  const [postList, dispatchPostList] = useReducer(postListReducer, []); // Initialize with D_POST_LIST
+  const [postList, dispatchPostList] = useReducer(postListReducer, []);
 
   const addtoList = (userid, postTitle, postbody, tags) => {
     dispatchPostList({
