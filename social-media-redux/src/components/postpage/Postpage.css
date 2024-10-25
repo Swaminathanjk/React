@@ -1,0 +1,8 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+.del_badge {
+  font-size: 1.25rem; /* Adjust the font size as needed */
+  padding: 0.5em 0.75em;
+}
