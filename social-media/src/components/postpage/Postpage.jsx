@@ -4,10 +4,12 @@ import { PostList } from "../Context/post-context";
 import "./Postpage.css";
 import Empty_postpage from "../Empty_postpage";
 import Loading from "../Loading";
+import { useNavigate } from "react-router-dom";
 
 const Postpage = () => {
   const { postList, addapi } = useContext(PostList);
   const [fetching, setfetching] = useState(false);
+  const nav = useNavigate();
 
   useEffect(() => {
     setfetching(true);
@@ -16,6 +18,7 @@ const Postpage = () => {
       .then((data) => {
         addapi(data);
         setfetching(false);
+        // nav("/home");
       });
   }, []);
 

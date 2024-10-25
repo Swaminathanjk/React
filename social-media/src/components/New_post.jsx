@@ -21,6 +21,22 @@ const New_post = () => {
     postTitleElement.current.value = "";
     postbodyElement.current.value = "";
     tagsElement.current.value = "";
+
+    fetch("https://apigenerator.dronahq.com/api/sqNioehA/data"),
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: postTitle,
+          body: postbody,
+          userid: userid,
+          tags: tags,
+        }),
+      }
+        .then((response) => response.json())
+        .then((post) => addtoList(post));
   };
 
   return (
@@ -75,7 +91,7 @@ const New_post = () => {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary"> 
+      <button type="submit" className="btn btn-primary">
         Post
       </button>
     </form>

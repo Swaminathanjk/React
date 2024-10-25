@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Sidebar = ({ currtab, setcurrtab }) => {
+const Sidebar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
@@ -17,30 +18,21 @@ const Sidebar = ({ currtab, setcurrtab }) => {
       </a>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item" onClick={() => setcurrtab("home")}>
-          <a
-            href="#"
-            className={`nav-link text-white ${currtab === "home" && "active"}`}
-            aria-current="page"
-          >
+        <li className="nav-item" >
+          <Link to="/home" className={"nav-link text-white"} aria-current="page">
             <svg className="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#home"></use>
             </svg>
             Home
-          </a>
+          </Link>
         </li>
-        <li onClick={() => setcurrtab("new_post")}>
-          <a
-            href="#"
-            className={`nav-link text-white ${
-              currtab === "new_post" && "active"
-            }`}
-          >
+        <li >
+          <Link to="/newpost" className={"nav-link text-white"}>
             <svg className="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#speedometer2"></use>
             </svg>
             Create Post
-          </a>
+          </Link>
         </li>
       </ul>
       <hr />
