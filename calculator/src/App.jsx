@@ -3,7 +3,7 @@ import Display from "./components/display/Display";
 
 function App() {
   return (
-    <div classNameName="app">
+    <div>
       <Display />
     </div>
   );

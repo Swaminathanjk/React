@@ -1,8 +1,17 @@
+.parent-container {
+  display: flex; /* Enable Flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
 .display {
-  
+  display: flex; /* Add Flexbox */
+  flex-direction: column; /* Align items in a column */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
   width: 250px;
   margin: 10px;
-  
+  align-items: center;
   border: 2px solid rgb(0, 0, 0);
   padding: 20px;
   border-radius: 5px;
@@ -16,4 +25,3 @@
   border-radius: 5px;
   border: none;
 }
-

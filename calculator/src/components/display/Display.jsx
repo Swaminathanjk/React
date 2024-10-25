@@ -40,18 +40,20 @@ const Display = () => {
   };
 
   return (
-    <div classNameName="display">
-      <center>
-        <input
-          type="text"
-          placeholder="Cleared"
-          classNameName="display_text"
-          value={caldis}
-          readOnly
-        />
-      </center>
+    <div className="parent-container">
+      <div className="display">
+        <center>
+          <input
+            type="text"
+            placeholder="Cleared"
+            className="display_text"
+            value={caldis}
+            readOnly
+          />
+        </center>
 
-      <Button buttons={buttons} addtodisplay={addtodisplay} />
+        <Button buttons={buttons} addtodisplay={addtodisplay} />
+      </div>
     </div>
   );
 };
