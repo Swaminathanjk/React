@@ -75,7 +75,7 @@ const New_post = () => {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary"> 
         Post
       </button>
     </form>

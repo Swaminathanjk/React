@@ -21,7 +21,7 @@ function App() {
           </div>
         </div>
       </div>
-    </PostListProvider>
+    </PostListProvider> 
   );
 }
 
