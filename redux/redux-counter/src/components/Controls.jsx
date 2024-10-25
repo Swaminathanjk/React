@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import "./Controls.css";
 
 const Controls = () => {
-  const [inputValue, setInputValue] = useState(0); // State for input value
+  const [inputValue, setInputValue] = useState(""); // State for input value
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
