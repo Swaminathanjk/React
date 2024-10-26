@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Controls.css";
-import { counterActions } from "../Store/counterstore";
+import { counterActions } from "../Store/counter";
+import { privacyActions } from "../Store/privacy";
 import { useDispatch } from "react-redux";
 
 const Controls = () => {
@@ -8,7 +9,6 @@ const Controls = () => {
   const [inputValue, setInputValue] = useState(""); // State for input value
 
   const handleIncrement = () => {
-    
     dispatch(counterActions.INCREMENT());
   };
 
@@ -25,8 +25,7 @@ const Controls = () => {
   };
 
   const handlePrivacyToggle = () => {
-
-    dispatch(counterActions.PRIVACY_TOGGLE());
+    dispatch(privacyActions.PRIVACY_TOGGLE());
   };
 
   return (
