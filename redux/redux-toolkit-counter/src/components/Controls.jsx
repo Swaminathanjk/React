@@ -1,32 +1,33 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import "./Controls.css";
+import { counterActions } from "../Store/counterstore";
+import { useDispatch } from "react-redux";
 
 const Controls = () => {
-  const [inputValue, setInputValue] = useState(""); // State for input value
   const dispatch = useDispatch();
+  const [inputValue, setInputValue] = useState(""); // State for input value
 
   const handleIncrement = () => {
-    dispatch({ type: "INCREMENT" });
+    
+    dispatch(counterActions.INCREMENT());
   };
 
   const handleDecrement = () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch(counterActions.DECREMENT());
   };
 
   const handleAddition = () => {
-    dispatch({ type: "ADDITION", payload: { number: Number(inputValue) } });
+    dispatch(counterActions.ADDITION({ number: Number(inputValue) }));
   };
 
   const handleSubtraction = () => {
-    dispatch({ type: "SUBTRACTION", payload: { number: Number(inputValue) } });
+    dispatch(counterActions.SUBTRACTION({ number: Number(inputValue) }));
   };
 
   const handlePrivacyToggle = () => {
-    // console.log("Privacy toggled");
-    
-    dispatch({ type: "PRIVACY_TOGGLE" });
-  }
+
+    dispatch(counterActions.PRIVACY_TOGGLE());
+  };
 
   return (
     <div>

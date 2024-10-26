@@ -1,6 +1,5 @@
 import React from "react";
 import Controls from "./Controls";
-import { useSelector } from "react-redux";
 import Privacy_toggle from "./Privacy_toggle";
 
 const Display = () => {
