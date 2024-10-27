@@ -1,9 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
+import App from "./Pages/App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Components/Home.jsx";
-import Bag from "./Components/Bag.jsx";
+import Home from "./Pages/Home.jsx";
+import Bag from "./Pages/Bag/Bag.jsx";
+import { Provider } from "react-redux";
+import myntraStore from "./Store/item-store.js";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={myntraStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );

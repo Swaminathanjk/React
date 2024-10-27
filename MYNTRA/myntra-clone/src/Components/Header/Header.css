@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  background-color: #ffffff;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b6b1b1;
+  padding: 0 4%;
+}
+
+.logo_container,
+.nav_bar,
+.search_bar,
+.action_bar {
+  display: flex;
+  align-items: center;
+}
+
+.myntra_home {
+  height: 45px;
+}
+
+.logo_container {
+  flex: 0 1 auto;
+}
+
+.nav_bar {
+  display: flex;
+  min-width: 500px;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.nav_bar a {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #282c3f;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 28px 0;
+  border-bottom: 5px solid #ffffff;
+}
+
+.nav_bar a:hover {
+  border-bottom: 4px solid #f54e77;
+}
+
+.nav_bar a sup {
+  color: #ff3f6c;
+  font-size: 10px;
+}
+
+.search_bar {
+  height: 40px;
+  min-width: 200px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search_icon {
+  box-sizing: content-box;
+  height: 20px;
+  padding: 10px;
+  background-color: #f5f5f6;
+  color: #282c3f;
+  font-weight: 300;
+  border-radius: 4px 0 0 4px;
+}
+
+.search_input {
+  color: #696e79;
+  background-color: #f5f5f6;
+  flex-grow: 1;
+  height: 40px;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.nav_controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.action_bar {
+  display: flex;
+  gap: 20px; /* Adds space between each action_container */
+  align-items: center;
+}
+
+.action_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+.wishlist_active {
+  background-color: #f16565;
+  line-height: 10px;
+  padding: 0 3.5px;
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #f16565;
+  font-weight: 700;
+  cursor: pointer;
+  top: -5px; /* Adjusts vertically next to the icon */
+  right: 2px; /* Adjusts horizontally next to the icon */
+}
+
+.bag-item-count {
+  background-color: #f16565;
+  line-height: 18px;
+  padding: 0 6px;
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  top: -10px; /* Adjusts vertically next to the icon */
+  right: -13px; /* Adjusts horizontally next to the icon */
+}
+
+.action_name {
+  font-size: 14px;
+  color: #282c3f;
+  font-weight: 600;
+}
+
+a.action_container:link {
+  color: black;
+}
