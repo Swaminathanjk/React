@@ -1,8 +1,11 @@
 import React from "react";
 import { CgProfile, CgHeart, CgShoppingBag } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Nav_controls = () => {
+  const totalItem = useSelector((state) => state.bag);
+  const Wishlist = useSelector((state) => state.bag);
   return (
     <div className="nav_controls">
       <div className="action_bar">
@@ -22,7 +25,7 @@ const Nav_controls = () => {
           <Link to="/bag" className="action_name">
             Bag
           </Link>
-          <span className="bag-item-count">0</span>
+          <span className="bag-item-count">{totalItem.length}</span>
         </div>
       </div>
     </div>

@@ -1,23 +1,27 @@
 import React from "react";
 import "./Bagdisplay.css";
 import { RxCross2 } from "react-icons/rx";
+import { bagActions } from "../../Store/bagSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { FiMinusCircle } from "react-icons/fi";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
-const Bagdisplay = () => {
-  const item = {
-    id: "001",
-    image: "/images/1.jpg",
-    company: "Carlton London",
-    item_name: "Rhodium-Plated CZ Floral Studs",
-    original_price: 1045,
-    current_price: 606,
-    discount_percentage: 42,
-    return_period: 14,
-    delivery_date: "10 Oct 2023",
-    rating: {
-      stars: 4.5,
-      count: 1400,
-    },
+const Bagdisplay = ({ item }) => {
+  const bag = useSelector((store) => store.bag); // Assuming bag contains item IDs
+  
+  const itemcount = bag.filter((i) => i === item.id).length;
+  const dispatch = useDispatch();
+
+  const removeitem = () => {
+    dispatch(bagActions.removefromBag(item.id));
   };
+  const removeall = () => {
+    dispatch(bagActions.removeAll(item.id));
+  };
+  const handleAddtoBag = () => {
+    dispatch(bagActions.addtoBag(item.id));
+  };
+
   return (
     <div>
       <main>
@@ -48,12 +52,16 @@ const Bagdisplay = () => {
                   {item.delivery_date}
                 </span>
               </div>
+              <div className="qty">
+                Qty: {itemcount}{" "}
+                <IoMdAddCircleOutline
+                  onClick={() => handleAddtoBag()}
+                  className="add"
+                />
+                <FiMinusCircle onClick={() => removeitem()} className="minus" />
+              </div>
             </div>
-
-            <div
-              className="remove-from-cart"
-              onClick={() => console.log("item removed")}
-            >
+            <div className="remove-from-cart" onClick={() => removeall()}>
               <RxCross2 />
             </div>
           </div>

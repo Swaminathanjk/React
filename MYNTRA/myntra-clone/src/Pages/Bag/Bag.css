@@ -1,6 +1,14 @@
 .bag-page {
+  margin-left: 5vw;
+  margin-right: 10vw;
   display: flex;
-  width: 75%;
-  margin-left: 12.5%;
-  padding-top: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+
+.bag-items-container {
+  flex: 1;
+  margin-right: 20px; /* Adds space between items and summary */
+}
+
+

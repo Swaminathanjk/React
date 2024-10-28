@@ -1,12 +1,20 @@
-.bag-summary {
+/* .bag-summary {
+  position: sticky;
   vertical-align: top;
   display: inline-block;
   width: auto;
+  justify-content: flex-end;
   padding: 24px 0 0 16px;
   color: #282c3f;
   font-size: 13px;
   line-height: 1.42857143;
   margin-left: 1vw;
+} */
+.bag-summary {
+  width: 300px; /* Fixed width to keep it on the right */
+  position: sticky;
+  top: 20px; /* To keep it at the top when scrolling */
+  
 }
 
 .bag-details-container {

@@ -1,12 +1,33 @@
 import React from "react";
 import "./Bagsummary.css";
+import { useSelector } from "react-redux";
 
-const Bagsummary = () => {
-  const totalItem = 0;
-  const totalMRP = 0;
-  const totalDiscount = 0;
+const Bagsummary = ({ items }) => {
+  const bag = useSelector((store) => store.bag); // Assuming bag contains item IDs
+  
+  let itemQuantities = {};
+  bag.forEach(itemId => {
+    itemQuantities[itemId] = (itemQuantities[itemId] || 0) + 1;
+  });
+  console.log(itemQuantities);
+  
+
+  let totalItem = Object.keys(itemQuantities).length;
+  let totalMRP = 0;
+  let totalDiscount = 0;
   const CONVENIENCE_FEES = 99;
-  const finalPayment = 0;
+  let finalPayment = 0;
+
+  items.forEach(item => {
+    const quantity = itemQuantities[item.id] || 0;
+    if (quantity > 0) {
+      // totalItem += quantity;
+      totalMRP += item.original_price * quantity;
+      totalDiscount += (item.original_price - item.current_price) * quantity;
+      finalPayment += item.current_price * quantity;
+    }
+  });
+
   return (
     <div className="bag-summary">
       <div className="bag-details-container">
@@ -28,7 +49,7 @@ const Bagsummary = () => {
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹{finalPayment}</span>
+          <span className="price-item-value">₹{finalPayment + CONVENIENCE_FEES}</span>
         </div>
       </div>
       <button

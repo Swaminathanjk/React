@@ -6,6 +6,7 @@ import Home from "./Pages/Home.jsx";
 import Bag from "./Pages/Bag/Bag.jsx";
 import { Provider } from "react-redux";
 import myntraStore from "./Store/item-store.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const router = createBrowserRouter([
   {
